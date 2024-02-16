@@ -1,6 +1,7 @@
 //app create
 const express = require("express");
 const app = express();
+const cors = require('cors');
 
 //port from env
 require("dotenv").config();
@@ -8,6 +9,7 @@ PORT = process.env.PORT || 3000;
 
 //middlewares add krna
 app.use(express.json());
+app.use(cors());
 const fileupload = require("express-fileupload");
 app.use(fileupload({
     useTempFiles : true,
